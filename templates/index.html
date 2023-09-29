@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- Make it compatible with mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Profit Prediction</title>
+  
+  <style>
+    /* Center the form */
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .login {
+      text-align: center;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: violet;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background: violet;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    h4 {
+      color: violet;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login">
+    <h1>Profit Prediction</h1>
+
+    <form action="{{ url_for('predict')}}" method="post">
+      <input type="text" name="percent biking" placeholder="Rnd Spending" required="required" /><br>
+      <input type="text" name="percent smoking" placeholder="Marketing Spending" required="required" /><br>
+
+      <button type="submit" class="btn btn-primary btn-block btn-large">Predicted Profit</button>
+    </form>
+
+    <br>
+    <br>
+    <h4>{{ prediction_text }}</h4>
+  </div>
+</body>
+</html>
